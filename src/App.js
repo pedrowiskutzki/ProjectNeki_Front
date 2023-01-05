@@ -5,15 +5,15 @@ import { Router } from './Routes/router';
 import { GlobalStyle } from './Styles/global';
 
 export default function App() {
- 
+
   return (
     <>
-    <GlobalStyle />
-    <BrowserRouter>
-    <AuthProvider>
-    <Router />
-    </AuthProvider>
-    </BrowserRouter>
+      <GlobalStyle />
+      <BrowserRouter>
+        <AuthProvider>
+          <Router />
+        </AuthProvider>
+      </BrowserRouter>
     </>
   );
 }

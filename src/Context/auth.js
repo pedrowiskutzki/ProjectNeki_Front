@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { api } from "../Services/api/api";
-import clienteService from "../Services/request/pessoaService";
 
 const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
