@@ -1,5 +1,7 @@
 import React from 'react';
-import Login from './Pages/Login';
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './Context/auth';
+import { Router } from './Routes/router';
 import { GlobalStyle } from './Styles/global';
 
 export default function App() {
@@ -7,7 +9,11 @@ export default function App() {
   return (
     <>
     <GlobalStyle />
-    <Login/>
+    <BrowserRouter>
+    <AuthProvider>
+    <Router />
+    </AuthProvider>
+    </BrowserRouter>
     </>
   );
 }
