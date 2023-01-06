@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     --cor-primaria:#19525E;  
     --cor-secundaria: #8BE3F7;
     --cor-complementar-1: #3EDEBE;
-    --cor-complementar-2: #454D4F;
+    --cor-complementar-2: #1C1C1C;
     --cor-complementar-3: #2D96AD;
     --cor-complementar-4: #F7F7F7;
 

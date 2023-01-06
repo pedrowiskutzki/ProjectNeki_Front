@@ -16,7 +16,6 @@ export const Button = styled.button `
     height: 50px;
     margin: 0.5rem;
     border-radius: 20px;
-    
     &:Hover {
     background-color: red;
   }
