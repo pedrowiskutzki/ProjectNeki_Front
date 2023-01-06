@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import pessoaService from '../../Services/request/pessoaService';
 import { DivContainer, Formulario } from './styled';
 
@@ -21,6 +21,7 @@ export default function Register() {
             console.log(res);
             console.log(res.data);
             alert("Usuario cadastrado com sucesso!")
+            navigate("/")
         }).catch((err) => {
               alert("Alguma coisa deu errado!")
         });
@@ -36,6 +37,7 @@ export default function Register() {
                 <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type="password" placeholder="Confirmar Senha" />
                 <button onClick={handleSubmit}> Cadastrar </button> 
+            <Link to='/'><p style={{fontSize:"14px", marginTop:"10px", color:"#3EDEBE"}}>Se ja possui conta, Login </p></Link>
                 </label>
             </Formulario>
 

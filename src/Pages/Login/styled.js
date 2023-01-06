@@ -17,7 +17,6 @@ export const Formulario = styled.form `
 height: 21.5rem;
 width: 20rem;
 display: flex;
-justify-content: space-around;
 align-items: center;
 flex-direction: column;
 background-color: var(--cor-primaria);
@@ -68,7 +67,7 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 1.5rem;
+    margin: 1.4rem;
 
 }
 
@@ -82,6 +81,9 @@ label {
     justify-content: 'center';
     align-items: 'center';
     
+}
+p{
+    color:white,
 }
 
 input {

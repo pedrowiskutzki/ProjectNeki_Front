@@ -16,10 +16,10 @@ export default function Home() {
   
 
   useEffect(() => {
-    skillService
+    pessoaSkillService
       .getAll()
       .then((res) => {
-        setSkill(res.data);
+        setPessoaSkill(res.data);
         setRemoveLoading(true);
       })
       .catch((err) => {
@@ -43,17 +43,21 @@ export default function Home() {
           <button onClick={openModal}>Adicionar Skill</button>
         </Title>
         <CardSkills>
-          {skill.length === 0 ? (
+          {pessoaSkill.length === 0 ? (
             <p></p>
           ) : (
-            skill.map((skill) => (
+            pessoaSkill.map((userSkill) => (
               <>
+              {userId === userSkill.pessoa.id ?(
+                <p></p>
+              ) : (
                 <Card>
-                  <img src={skill.image_url} width="140px" height="140px" />
-                  <h1>{skill.name}</h1>
-                  <p>{skill.description}</p>
-                  <h3>{skill.knowledge_level}</h3>
+                  <img src={userSkill.skill.image_url} width="140px" height="140px" />
+                  <h1>{userSkill.skill.name}</h1>
+                  <p>{userSkill.skill.description}</p>
+                  <h3>{userSkill.knowledge_level}</h3>
                 </Card>
+                )}
               </>
             ))
           )}

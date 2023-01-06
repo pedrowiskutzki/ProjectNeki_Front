@@ -72,10 +72,36 @@ export const Card = styled.div `
         background-color: var(--cor-complementar-4);
         color: black;
     }
+
+    button{
+        margin-top: 10px;
+        width: 80px;
+        height: 40px;
+        background-color: var(--cor-primaria);
+        border-radius: 10px;
+        :hover{
+            width: 95px;
+            height: 45px;
+            background-color: var(--cor-complementar-1);
+        }
+    }
 `
 export const DivButton = styled.div `
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    
+    button{
+        width: 80px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        :hover{
+            width: 95px;
+            height: 45px;
+            color: red;
+        }
+    }
 
 `
 export const SaveButton = styled.button `
@@ -90,14 +116,3 @@ export const SaveButton = styled.button `
     
 `
 
-export const ExitButton = styled.button `
-     width: 4rem;
-    height: 3rem;
-    border-radius: 1rem;
-    margin-right: 3rem ;
-    background-color: #FA564A;
-
-    :hover{
-        background-color: #FA190D;
-    }
-`
