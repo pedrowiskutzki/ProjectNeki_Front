@@ -21,9 +21,7 @@ export function Router() {
     //athenticacao
     return (
         <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/register" element={<Register/>} /> 
+            <Route path="/home" element={<Home />} /> 
             <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} /> 
         </Routes>
     );

@@ -73,3 +73,31 @@ export const Card = styled.div `
         color: black;
     }
 `
+export const DivButton = styled.div `
+    display: flex;
+    justify-content: space-between;
+
+`
+export const SaveButton = styled.button `
+     width: 4rem;
+    height: 3rem;
+    border-radius: 1rem;
+    background-color: #3E97CF;
+
+    :hover{
+        background-color: #32F02A;
+    }
+    
+`
+
+export const ExitButton = styled.button `
+     width: 4rem;
+    height: 3rem;
+    border-radius: 1rem;
+    margin-right: 3rem ;
+    background-color: #FA564A;
+
+    :hover{
+        background-color: #FA190D;
+    }
+`
