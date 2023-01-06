@@ -72,4 +72,15 @@ export const Card = styled.div `
         background-color: var(--cor-complementar-4);
         color: black;
     }
+
+    button{
+    width: 80px;
+    height: 35px;
+    border-radius: 1rem;
+    background-color: #EB4A40;
+
+    :hover{
+        background-color: #EB0201;
+    }
+    }
 `
