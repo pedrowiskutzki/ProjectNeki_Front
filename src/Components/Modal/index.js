@@ -14,13 +14,14 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
     const [skill, setSkill] = useState('');
     const [removeLoading, setRemoveLoading] = useState(false);
     const { userId } = useContext(AuthContext);
-    const [skillSelecionado, setSkillSelecionado] = useState('')
+    const [skillSelecionado, setSkillSelecionado] = useState([])
     const navigate = useNavigate();
 
     // const getCurrentDate = () => {
     //     const date = new Date().toJSON().slice(0, 10);
     //     return date;
     //   };
+    
       
     useEffect(() => {
         skillService
@@ -34,12 +35,13 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
           });
       }, []);
 
-      const handleSubmit = (event) => {
+      const handleSubmit = async (event, idSkill) => {
         event.preventDefault();
+          const id = await localStorage.getItem("@id");
         const postPessoaSkill = {
-          pessoa:  {id: userId},
-          skill:  {id: skillSelecionado},
-          knowledge_level: 1,
+          pessoa:  {id: id},
+          skill:  {id: idSkill},
+          knowledge_level: 0,
           created_at: "07/01/2023 08:25"
         };
         console.log(skillSelecionado)
@@ -47,6 +49,7 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
         pessoaSkillService.create(postPessoaSkill).then((res) => {
             console.log(res);
             console.log(res.data);
+            alert("Skill Salva")
             
         }).catch((err) => {
             alert("Ocorreu algum erro tente novamente");
@@ -83,10 +86,6 @@ return(
           }}
         >
             <DivButton>
-        <div>
-          <ExitButton onClick={signOut}>Logout</ExitButton>
-          <SaveButton onClick={(event) => handleSubmit(event)}>Save</SaveButton>
-          </div>
           <button onClick={closeModal}><BsXLg size={28} /></button>
           </DivButton>
           <CardSkills>
@@ -100,7 +99,7 @@ return(
                     <h1>{skill.name}</h1>
                     <p>{skill.description}</p>
                     <h3>{skill.knowledge_level}</h3>
-                    <button onClick={() => setSkillSelecionado(skill.id)}>{skill.id}Adicionar</button>
+                    <button onClick={(event) => handleSubmit(event, skill.id)}>Adicionar</button>
                   </Card>
                 </>
               ))
