@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../Context/auth';
 import { DivContainer, Formulario } from './styled';
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function Login() {
 

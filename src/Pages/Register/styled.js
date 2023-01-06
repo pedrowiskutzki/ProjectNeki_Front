@@ -14,7 +14,7 @@ export const DivContainer = styled.div `
 `
 
 export const Formulario = styled.form `
-height: 21.5rem;
+height: 22.5rem;
 width: 20rem;
 display: flex;
 justify-content: space-around;
@@ -64,24 +64,18 @@ button:hover::before {
  width: 155%;
 }
 
+h3{
+    color:white;
+    margin-bottom: -70px;
+    
+}
+
 label {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 1.5rem;
 
-}
-
-.inputArea {
-    flex-direction: row;
-    width: '90%';
-}
-.icon {
-    width: '15%';
-    height: 50;
-    justify-content: 'center';
-    align-items: 'center';
-    
 }
 
 input {
