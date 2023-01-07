@@ -9,9 +9,9 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [userId, setUserId] = useState("");
     const [pessoa, setPessoa] = useState("");
-      
-   const [token, setToken] = useState(null)
-   useEffect(() => {
+
+    const [token, setToken] = useState(null)
+    useEffect(() => {
 
         // pega o token do storage quando a pagina for atualizada
         const token = localStorage.getItem('token')
@@ -21,35 +21,35 @@ export const AuthProvider = ({ children }) => {
             api.defaults.headers.Authorization = `Bearer ${token}`;
             setToken(token);
             setPessoa(pessoa);
-            setIsAuthenticated(true); 
+            setIsAuthenticated(true);
             setUserId(localStorage.getItem('@id'));
-            
-        }
-    }, [])      
-  
-  function signIn(login, senhaLogin) {
-  
-   	api.post("/pessoa/login", {"login" : login, "password" : senhaLogin }).then( (resp) => {
-   		var token = resp.data.token;
-   		var pessoa = resp.data.pessoa;
-		api.defaults.headers.Authorization = `Bearer ${token}`;
-		setToken(token);
-		setPessoa(pessoa);
-		localStorage.setItem("token", token);
-		localStorage.setItem("pessoa",pessoa);
-                localStorage.setItem("@authenticated", true);
-                localStorage.setItem("@token",token)
-                localStorage.setItem("@id", pessoa.id);
-                setIsAuthenticated(true); 
-                navigate("/home")
-                alert("sucesso")
-            },(error) => {
-                alert("login ou senha invalidos")
-    })
-    }
-         
 
-  const signOut = () => {
+        }
+    }, [])
+
+    function signIn(login, senhaLogin) {
+
+        api.post("/pessoa/login", { "login": login, "password": senhaLogin }).then((resp) => {
+            var token = resp.data.token;
+            var pessoa = resp.data.pessoa;
+            api.defaults.headers.Authorization = `Bearer ${token}`;
+            setToken(token);
+            setPessoa(pessoa);
+            localStorage.setItem("token", token);
+            localStorage.setItem("pessoa", pessoa);
+            localStorage.setItem("@authenticated", true);
+            localStorage.setItem("@token", token)
+            localStorage.setItem("@id", pessoa.id);
+            setIsAuthenticated(true);
+            navigate("/home")
+            alert("sucesso")
+        }, (error) => {
+            alert("login ou senha invalidos")
+        })
+    }
+
+
+    const signOut = () => {
         setIsAuthenticated(false);
         setUserId("");
         setPessoa(null);

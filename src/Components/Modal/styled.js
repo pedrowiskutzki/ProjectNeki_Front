@@ -1,6 +1,6 @@
 import styled from "styled-components";
- 
-export const Container = styled.div `
+
+export const Container = styled.div`
     width: 100%;
     height: 100vh;
     background-color: var(--cor-primaria);
@@ -10,7 +10,7 @@ export const Container = styled.div `
     padding: 0;
     margin: 0;
 `
-export const Title = styled.div `
+export const Title = styled.div`
     width: 100%;
     height: 100px;
     display: flex;
@@ -41,7 +41,7 @@ export const Title = styled.div `
         border-radius: 10px;
     }
 `
-export const CardSkills = styled.div `
+export const CardSkills = styled.div`
     width: 85%;
     height: auto;
     background-color: var(--cor-complementar-2);
@@ -55,7 +55,7 @@ export const CardSkills = styled.div `
         align-items: center;  
     }
 `
-export const Card = styled.div `
+export const Card = styled.div`
     width: 200px;
     height: 250px;
     background-color: black;
@@ -86,7 +86,7 @@ export const Card = styled.div `
         }
     }
 `
-export const DivButton = styled.div `
+export const DivButton = styled.div`
     display: flex;
     justify-content: flex-end;
     
@@ -104,7 +104,7 @@ export const DivButton = styled.div `
     }
 
 `
-export const SaveButton = styled.button `
+export const SaveButton = styled.button`
      width: 4rem;
     height: 3rem;
     border-radius: 1rem;

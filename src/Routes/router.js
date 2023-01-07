@@ -12,17 +12,17 @@ export function Router() {
     if (!isAuthenticated) {
         return (
             <Routes>
-                <Route path="/" element={<Login />} /> 
-                <Route path="/register" element={<Register/>} /> 
-                <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />          
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />
             </Routes>
         );
     }
     //athenticacao
     return (
         <Routes>
-            <Route path="/home" element={<Home />} /> 
-            <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} /> 
+            <Route path="/home" element={<Home />} />
+            <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />
         </Routes>
     );
 }

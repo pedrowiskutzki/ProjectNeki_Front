@@ -56,15 +56,14 @@ export const CardSkills = styled.div `
     }
 `
 export const Card = styled.div `
-    width: 200px;
-    height: 280px;
+    width: 350px;
+    height: 220px;
     background-color: black;
     border: 2px solid var(--cor-complementar-3);
     color: white;
     margin: 0.9rem;
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     border-radius: 20px;
 
@@ -76,27 +75,55 @@ export const Card = styled.div `
 
     div{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;   
+
     }
 
     button{
-    width: 80px;
-    height: 35px;
+    width: 100px;
+    height: 45px;
     border-radius: 1rem;
+    margin-top: 10px;
+    margin-left: 90px;
     background-color: #EB4A40;
 
     :hover{
         background-color: #EB0201;
     }
     }
-
-    p{
-        font-size: 13px;
+    img{
+        margin-top: 10px;
+        filter: drop-shadow(0px 0px 7px blue) ;
+    }
+    span{
+        flex-direction: row;
+    }
+    input{
+        width: 40px;
+        height: 25px;
+    }
+    p{  
+        text-align: initial;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+    h1{
+       text-align: center;
+       font-size: 24px;
     }
     h2{
-        font-size: 17px;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+        filter: drop-shadow(0px 0px 5px blue) ;
     }
     h3{
-        font-size: 12px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+    h4{
+        margin-left: 10px;
     }
 `
