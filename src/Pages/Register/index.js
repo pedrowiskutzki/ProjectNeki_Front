@@ -15,23 +15,23 @@ export default function Register() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(login != null && login != "" && password != null && password != "" && senhaConfirma != null && senhaConfirma != "")
-        if (password == senhaConfirma) {
-            const pessoa = {
-                login: login,
-                password: password,
-            };
-            pessoaService.create(pessoa).then((res) => {
-                console.log(res);
-                console.log(res.data);
-                alert("Usuario cadastrado com sucesso!")
-                navigate("/")
-            }).catch((err) => {
-                alert("Alguma coisa deu errado!")
-            });
-        } else {
-            alert("As senhas não estão iguais")
-        }else {
+        if (login !== null && login !== "" && password !== null && password !== "" && senhaConfirma !== null && senhaConfirma !== "")
+            if (password === senhaConfirma) {
+                const pessoa = {
+                    login: login,
+                    password: password,
+                };
+                pessoaService.create(pessoa).then((res) => {
+                    console.log(res);
+                    console.log(res.data);
+                    alert("Usuario cadastrado com sucesso!")
+                    navigate("/")
+                }).catch((err) => {
+                    alert("Alguma coisa deu errado!")
+                });
+            } else {
+                alert("As senhas não estão iguais")
+            } else {
             alert("Preencha todos os Campos")
         }
     };
