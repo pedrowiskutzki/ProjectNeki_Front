@@ -57,12 +57,13 @@ export const CardSkills = styled.div `
 `
 export const Card = styled.div `
     width: 200px;
-    height: 250px;
+    height: 280px;
     background-color: black;
     border: 2px solid var(--cor-complementar-3);
     color: white;
     margin: 0.9rem;
     display: flex;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
@@ -71,6 +72,11 @@ export const Card = styled.div `
         border: 4px solid var(--cor-complementar-3);
         background-color: var(--cor-complementar-4);
         color: black;
+    }
+
+    div{
+        display: flex;
+        flex-direction: row;
     }
 
     button{
@@ -82,5 +88,15 @@ export const Card = styled.div `
     :hover{
         background-color: #EB0201;
     }
+    }
+
+    p{
+        font-size: 13px;
+    }
+    h2{
+        font-size: 17px;
+    }
+    h3{
+        font-size: 12px;
     }
 `

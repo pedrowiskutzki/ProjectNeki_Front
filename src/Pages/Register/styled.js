@@ -4,7 +4,7 @@ export const DivContainer = styled.div `
     width: 100%;
     height: 100vh;
     align-items: center;
-    background-color: var(--cor-primaria);
+    background-image: url(https://i.pinimg.com/originals/eb/82/fd/eb82fd6a7d83c0086c15e33e8b9ba657.jpg);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,7 +14,7 @@ export const DivContainer = styled.div `
 `
 
 export const Formulario = styled.form `
-height: 22.5rem;
+height: 26.5rem;
 width: 20rem;
 display: flex;
 justify-content: space-around;
@@ -64,6 +64,12 @@ button:hover::before {
  width: 155%;
 }
 
+span{
+    width: 100%;
+    height: fit-content;
+    
+}
+
 h3{
     color:white;
     margin-bottom: -70px;
@@ -107,4 +113,12 @@ input:focus::placeholder {
  transition: opacity .3s;
 }
 
+`
+
+export const Icon = styled.div `
+   margin-left: auto;
+   width: fit-content;
+   position: relative;
+   right: 12px;
+   bottom: 32px;
 `

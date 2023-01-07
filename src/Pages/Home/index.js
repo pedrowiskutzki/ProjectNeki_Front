@@ -6,12 +6,15 @@ import skillService from '../../Services/request/skillService';
 import pessoaSkillService from '../../Services/request/pessoaSkillService';
 import Navbar from '../../Components/Navbar';
 import { SkillModal } from '../../Components/Modal';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [userId, setUserId] = useState('');
   const [pessoaSkill, setPessoaSkill] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [removeLoading, setRemoveLoading] = useState(false);
+  const [newLevel, setNewLevel] = useState(knowledge_level);
+  const navigate = useNavigate();
   
   function refreshPage() {
     window.location.reload(false);
@@ -29,6 +32,31 @@ export default function Home() {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
+
+  const increaseLevel = () => {
+    newLevel == 10 ? setNewLevel(10) : setNewLevel(newLevel + 1)
+}
+
+const decreaseLevel = () => {
+    newLevel == 0 ? setNewLevel(0) : setNewLevel(newLevel - 1)
+}
+  const handleUpdate = (event, idSkill) => {
+    event.preventDefault();
+
+    const dado = {
+      pessoa:  {id: userId},
+      skill:  {id: idSkill},
+      knowledge_level: newLevel,    
+    };
+
+    pessoaSkillService
+    .update(userId, dado).then((response)=>{
+      navigate("/home");
+      console.log(response);})
+    .catch((error)=>{
+      console.log(error);
+    });
+};
 
   function handleDeleteEventoEspecial(id) {
     pessoaSkillService
@@ -75,7 +103,13 @@ export default function Home() {
                   <img src={userSkill.skill.image_url} width="140px" height="140px" />
                   <h1>{userSkill.skill.name}</h1>
                   <p>{userSkill.skill.description}</p>
-                  <h3>{userSkill.knowledge_level}</h3>
+                  <h3>{userSkill.skill.version}</h3>
+                  <div>
+                  <button>-</button>
+                  <h2>{userSkill.knowledge_level}</h2>
+                  <button>+</button>
+                  </div>
+                  <button>Atualizar</button>
                   <button onClick={() => handleDeleteEventoEspecial(userSkill.id)}>Remover</button>
                 </Card>
                 )}

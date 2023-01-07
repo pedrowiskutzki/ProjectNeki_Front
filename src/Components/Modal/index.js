@@ -21,7 +21,9 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
     //     const date = new Date().toJSON().slice(0, 10);
     //     return date;
     //   };
-    
+    function refreshPage() {
+      window.location.reload(false);
+    }
       
     useEffect(() => {
         skillService
@@ -41,8 +43,7 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
         const postPessoaSkill = {
           pessoa:  {id: id},
           skill:  {id: idSkill},
-          knowledge_level: 0,
-          created_at: "07/01/2023 08:25"
+          knowledge_level: 0
         };
         console.log(skillSelecionado)
         console.log(postPessoaSkill)
@@ -50,6 +51,7 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
             console.log(res);
             console.log(res.data);
             alert("Skill Salva")
+            refreshPage();
             
         }).catch((err) => {
             alert("Ocorreu algum erro tente novamente");
