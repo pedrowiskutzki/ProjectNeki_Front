@@ -54,6 +54,10 @@ export const CardSkills = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  img {
+    margin: 8px;
+  }
 `;
 export const Card = styled.div`
   width: 350px;

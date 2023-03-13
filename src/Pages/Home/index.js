@@ -18,6 +18,7 @@ export default function Home() {
   const [userId, setUserId] = useState("");
   const [pessoaSkill, setPessoaSkill] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [updates, setUpdates] = useState({});
   const [removeLoading, setRemoveLoading] = useState(false);
 
   async function handleUpdate(id, newLevel) {
@@ -123,7 +124,8 @@ export default function Home() {
                             )
                           }
                         >
-                          -
+                          {" "}
+                          -{" "}
                         </ButtonsLevelDecrease>
                         <h2>Level {userSkill.knowledge_level}</h2>
                         <ButtonsLevelIncrease
@@ -134,7 +136,8 @@ export default function Home() {
                             )
                           }
                         >
-                          +
+                          {" "}
+                          +{" "}
                         </ButtonsLevelIncrease>
                       </DivButtons>
                       <span>
@@ -143,6 +146,7 @@ export default function Home() {
                             handleDeleteEventoEspecial(userSkill.id)
                           }
                         >
+                          {" "}
                           Remover
                         </ButtonRemoveSkill>
                       </span>

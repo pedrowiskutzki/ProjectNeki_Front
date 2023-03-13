@@ -6,23 +6,23 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 
 export function Router() {
-    const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
-    //Nao athenticado
-    if (!isAuthenticated) {
-        return (
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />
-            </Routes>
-        );
-    }
-    //athenticacao
+  //Nao athenticado
+  if (!isAuthenticated) {
     return (
-        <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
     );
+  }
+  //athenticacao
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<h1>Erro 404 - Página não Encontrada</h1>} />
+    </Routes>
+  );
 }
