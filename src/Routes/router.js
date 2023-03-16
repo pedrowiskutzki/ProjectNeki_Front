@@ -19,7 +19,7 @@ export function Router() {
       </Routes>
     );
   }
-  //athenticacao
+  //athenticado
   return (
     <Routes>
       <Route path="/" element={<Home />} />

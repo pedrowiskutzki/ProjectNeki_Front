@@ -20,7 +20,7 @@ export default function Login() {
       setPasswordRemember(true);
     }
   }, []);
-
+  //Chama funcao de Login
   function handleSignIn(e) {
     e.preventDefault();
     signIn(login, password);

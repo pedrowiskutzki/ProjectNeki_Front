@@ -13,7 +13,7 @@ export default function Register() {
   const [secure, setSecure] = useState(true);
   const [secureConfirm, setSecureConfirm] = useState(true);
   const navigate = useNavigate();
-
+  //Post de Usuario
   const handleSubmit = (event) => {
     event.preventDefault();
     if (

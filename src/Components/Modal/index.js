@@ -17,7 +17,7 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
   function refreshPage() {
     window.location.reload(false);
   }
-
+  //Puxar Skills pro Modal
   useEffect(() => {
     skillService
       .getAll()
@@ -29,7 +29,7 @@ export const SkillModal = ({ modalIsOpen, closeModal }) => {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
-
+  // Fazer o Put de knowledge_level
   const handleSubmit = async (event, idSkill) => {
     event.preventDefault();
     const id = await localStorage.getItem("@id");

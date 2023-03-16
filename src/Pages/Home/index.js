@@ -23,7 +23,7 @@ export default function Home() {
   const [updates, setUpdates] = useState([]);
   const [removeLoading, setRemoveLoading] = useState(false);
   const [value, setValue] = useState(5);
-
+  //Atualizar o knowledge_level
   function handleUpdateRating(id, newRating) {
     const dado = {
       knowledge_level: newRating,
@@ -45,7 +45,7 @@ export default function Home() {
         console.log(error);
       });
   }
-
+  // Faz o GetAll de user_skill
   useEffect(() => {
     get(); //Pegar Id do Usuario logado
     pessoaSkillService
@@ -58,7 +58,7 @@ export default function Home() {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
-
+  // Delete
   function handleDeleteEventoEspecial(id) {
     pessoaSkillService
       .remove(id)
@@ -80,12 +80,12 @@ export default function Home() {
         console.log(error);
       });
   }
-
+  //Puxa o id no localStorage
   const get = async () => {
     const id = await localStorage.getItem("@id");
     setUserId(id);
   };
-
+  //modal
   function openModal() {
     setIsOpen(true);
   }

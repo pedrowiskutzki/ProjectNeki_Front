@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       setUserId(localStorage.getItem("@id"));
     }
   }, []);
-
+  //Login
   function signIn(login, senhaLogin) {
     api.post("/pessoa/login", { login: login, password: senhaLogin }).then(
       (resp) => {
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
       }
     );
   }
-
+  //Sair
   const signOut = () => {
     setIsAuthenticated(false);
     setUserId("");
