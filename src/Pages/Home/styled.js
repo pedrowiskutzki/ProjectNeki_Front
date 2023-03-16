@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-complementar-1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +26,9 @@ export const Title = styled.div`
 
   h1 {
     font-size: 50px;
-    color: var(--cor-complementar-4);
-    border-bottom: 3px solid var(--cor-complementar-4);
+    color: #271dff;
+    border-bottom: 2px solid #271dff;
+    filter: drop-shadow(0px 0px 1px blue);
 
     @media screen and (max-width: 768px) {
       font-size: 35px;
@@ -37,10 +38,22 @@ export const Title = styled.div`
   button {
     width: 120px;
     height: 45px;
+    background-color: #ff781d; 
     margin-right: -20px;
     border-radius: 10px;
-  }
+    :hover {
+      transition: 0.1s;
+      background-color: #ffa940;
+    }
 `;
+export const DivRating = styled.div`
+  display: flex;
+  width: 15rem;
+  height: 6rem;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const CardSkills = styled.div`
   width: 85%;
   height: auto;
@@ -62,28 +75,23 @@ export const CardSkills = styled.div`
 export const Card = styled.div`
   width: 350px;
   height: 220px;
-  background-color: black;
-  border: 2px solid var(--cor-complementar-3);
-  color: white;
+  background-color: #ffff;
+  border: 1px solid var(--cor-complementar-3);
+  color: #00000;
   margin: 0.9rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   border-radius: 20px;
 
   :hover {
-    border: 4px solid var(--cor-complementar-3);
-    background-color: #05c5ff;
-    color: black;
+    border: 3px solid var(--cor-complementar-3);
+    color: #00000;
+    filter: drop-shadow(0px 0px 4px white);
   }
-
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-
   img {
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-left: 0px;
     filter: drop-shadow(0px 0px 7px blue);
   }
   input {
@@ -95,6 +103,7 @@ export const Card = styled.div`
     font-size: 14px;
     margin-bottom: 15px;
     margin-left: 10px;
+    color: #1d1f1e;
   }
   h1 {
     text-align: center;
@@ -103,58 +112,22 @@ export const Card = styled.div`
   h2 {
     font-size: 20px;
     text-align: center;
-    margin-bottom: 15px;
+
     filter: drop-shadow(0px 0px 5px blue);
   }
   h3 {
     font-size: 14px;
-    margin-bottom: 15px;
-    margin-left: 10px;
   }
   h4 {
-    margin-left: 10px;
+    margin-top: 20px;
   }
 `;
 
-export const DivButtons = styled.span`
+export const DivCard = styled.span`
   display: flex;
   flex-direction: row;
-`;
-
-export const ButtonsLevelIncrease = styled.button`
-  display: flex;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50px;
-  font-size: 30px;
-  justify-content: center;
-  background-color: #6eff74;
-  margin-left: 10px;
-
-  :hover {
-    border-width: 3px;
-    border-color: white;
-    background-color: #6eff1d;
-  }
-`;
-
-export const ButtonsLevelDecrease = styled.button`
-  display: flex;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 50px;
-  font-size: 30px;
-  justify-content: center;
-  background-color: #e3c76b;
-  margin-right: 10px;
-
-  :hover {
-    border-width: 5px;
-    border-color: white;
-    background-color: #fff200;
-  }
+  justify-content: space-evenly;
+  width: 100%;
 `;
 
 export const ButtonRemoveSkill = styled.button`
@@ -168,7 +141,8 @@ export const ButtonRemoveSkill = styled.button`
   margin-right: 10px;
 
   :hover {
+    background-color: red;
     border-width: 5px;
-    border-color: white;
+    border-color: red;
   }
 `;

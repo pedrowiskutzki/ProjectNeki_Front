@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { api } from "../Services/api/api";
 
 const AuthContext = createContext({});
@@ -38,11 +40,29 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("@token", token);
         localStorage.setItem("@id", pessoa.id);
         setIsAuthenticated(true);
+        toast.success("Sucesso, Bem Vindo!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
         navigate("/");
-        alert("sucesso");
       },
       (error) => {
-        alert("login ou senha invalidos");
+        toast.error("Login ou Senha invalidos! 😔", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     );
   }

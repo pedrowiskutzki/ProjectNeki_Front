@@ -14,20 +14,24 @@ export const DivContainer = styled.body`
 `;
 
 export const Formulario = styled.form`
-  height: 21.5rem;
+  height: 23.5rem;
   width: 24rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: var(--cor-primaria);
   border: 2px solid var(--cor-complementar-3);
-  border-radius: 0.8rem;
-  box-shadow: inset 15px 15px 42px #111127, inset -25px -25px 52px #252353;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   button {
     margin-top: 0.6rem;
     padding: 0.8em 1.8em;
-    border: 2px solid var(--cor-complementar-1);
+    border: 2px solid var(--cor-complementar-3);
     position: relative;
     overflow: hidden;
     background-color: transparent;
@@ -37,7 +41,7 @@ export const Formulario = styled.form`
     transition: 0.3s;
     z-index: 1;
     font-family: inherit;
-    color: var(--cor-complementar-4);
+    color: var(--cor-complementar-3);
   }
 
   button::before {
@@ -74,7 +78,7 @@ export const Formulario = styled.form`
     height: fit-content;
   }
   p {
-    color: white;
+    color: var(--cor-complementar-3);
   }
   div {
     display: flex;
@@ -87,8 +91,8 @@ export const Formulario = styled.form`
     line-height: 32px;
     border: 2px solid transparent;
     background-color: transparent;
-    color: #f7f7f7;
-    border-bottom-color: #f7f7f7;
+    color: white;
+    border-bottom-color: var(--cor-complementar-3);
     padding: 0.2rem 0;
     outline: none;
     transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -99,7 +103,7 @@ export const Formulario = styled.form`
     outline: none;
     padding: 0.2rem 1rem;
     border-radius: 1rem;
-    border-color: #f6f6f6;
+    border-color: var(--cor-complementar-3);
   }
 
   input::placeholder {

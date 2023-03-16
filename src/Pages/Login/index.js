@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import AuthContext from "../../Context/auth";
 import { Checkbox, DivContainer, Formulario, Icon } from "./styled";
 
