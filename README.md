@@ -44,6 +44,6 @@ This application implements basic security measures to protect the user's data. 
 This project was created by Pedro Wiskutzki as a Neki project. It uses the following technologies:
 
 * React [https://reactjs.org/]
-* [Other libraries and frameworks you used]
-* [API provider or service you used, if any]
+* React Modal, React Toastify, React Router
+
 
