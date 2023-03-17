@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# React Login and Skills Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React project that implements a login form, a user registration form, and a skills management page. It uses localStorage to store the user's preferences, and it communicates with a server-side API to perform the authentication and data management tasks.
 
-## Available Scripts
+##Features
 
-In the project directory, you can run:
+* Login page with username, password, and remember me checkbox.
+* User registration page with username, password, and confirmation fields.
+* Home page with a list of skills, each containing an image, a name, a level, and a description.
+* Skill edition and removal buttons in the skill list.
+* Skill creation modal dialog with a dropdown to select a skill.
+* Logout button.
 
-### `npm start`
+##Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To install this application, clone the repository and run the following commands:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install
+npm start
 
-### `npm test`
+Then open http://localhost:3000 to view it in the browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Usage
+To use this application, follow these steps:
 
-### `npm run build`
+1.Open the Login page and enter your username and password.
+2.If you want the application to remember your credentials, check the Remember me checkbox.
+3.Click the Login button. If your credentials are correct, you will be redirected to the Home page.
+4.On the Home page, you can see the list of skills you have added.
+5.To edit a skill's level or remove it, click the corresponding buttons in the skill's row.
+6.To add a new skill, click the Add Skill button and select a skill from the dropdown list. Then click the Save button.
+7.To logout, click the Logout button.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Security
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application implements basic security measures to protect the user's data. It does not allow access to the Home page without a valid login, and it stores the user's credentials in localStorage only if the Remember me checkbox is checked. The application communicates with a server-side API to perform the authentication and data management tasks, and it uses HTTPS protocol to encrypt the data in transit. However, this application is not intended to be used in a production environment without further security enhancements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Credits
+This project was created by [your name] as a [company/school/personal] project. It uses the following technologies:
 
-### `npm run eject`
+*React [https://reactjs.org/]
+*[Other libraries and frameworks you used]
+*[API provider or service you used, if any]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
